@@ -1,0 +1,134 @@
+/* กล่องของขวัญ */
+.gift-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ffe6e6;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .gift-box {
+    width: 200px;
+    height: 200px;
+    background-color: #ff6699;
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    padding-top: 180px;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2em;
+    transition: transform 0.3s ease;
+    z-index: 10;
+  }
+  
+  .gift-box:hover {
+    transform: scale(1.1);
+  }
+  
+  .ribbon {
+    position: absolute;
+    width: 200px;
+    height: 20px;
+    background-color: #fff;
+    top: 90px;
+    left: 0;
+    border-radius: 5px;
+  }
+  
+  .ribbon:before, .ribbon:after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 200px;
+    background-color: #fff;
+    border-radius: 5px;
+  }
+  
+  .ribbon:before {
+    left: 90px;
+    top: -90px;
+  }
+  
+  .ribbon:after {
+    left: 90px;
+    top: 90px;
+  }
+  
+  /* แสงที่ระเบิด */
+  #light-effect {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,102,153,0) 70%);
+    border-radius: 50%;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.5);
+    animation: none;
+    pointer-events: none;
+    z-index: 5;
+  }
+  
+  /* เอฟเฟกต์แสง */
+  @keyframes light-explosion {
+    0% {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(0.5);
+    }
+    100% {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(3);
+    }
+  }
+  
+  /* หัวใจลอย */
+  .heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #ff99cc;
+    border-radius: 50%;
+    animation: float 5s linear infinite;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .heart:before, .heart:after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #ff99cc;
+    border-radius: 50%;
+  }
+  
+  .heart:before {
+    top: -10px;
+    left: 0;
+  }
+  
+  .heart:after {
+    left: 10px;
+    top: 0;
+  }
+  
+  @keyframes float {
+    0% {
+      transform: translateY(0) scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: translateY(-200px) scale(1.2);
+      opacity: 0.7;
+    }
+    100% {
+      transform: translateY(-600px) scale(0.8);
+      opacity: 0;
+    }
+  }
+  
